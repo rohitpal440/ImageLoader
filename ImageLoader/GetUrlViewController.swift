@@ -25,7 +25,7 @@ class GetUrlViewController: UIViewController {
     @IBAction func downloadImage(sender: AnyObject) {
         if urlTextField.text!.isEmpty == false {
             if validateUrl(urlTextField.text) {
-                print("Entered Url is : " + urlTextField.text!)
+//                print("Entered Url is : " + urlTextField.text!)
 //                self.performSegueWithIdentifier("DownloadImage", sender: <#T##AnyObject?#>)
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
                 let imageViewController = storyboard.instantiateViewControllerWithIdentifier("ImageVC") as! ImageViewController

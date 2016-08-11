@@ -15,7 +15,7 @@ class ImageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        print("Got this URL" + imageUrl!)
+//        print("Got this URL" + imageUrl!)
         if imageUrl != nil {
             let networkService = NetworkService(url: NSURL(string: self.imageUrl!)!)
             networkService.fetchImage({(data) in
