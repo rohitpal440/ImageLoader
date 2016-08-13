@@ -5,7 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
-        <!--Get Url View Controller-->
+        <!--File Downloader-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="GetUrlViewController" customModule="ImageLoader" customModuleProvider="target" sceneMemberID="viewController">
@@ -17,38 +17,48 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Image Url" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2fF-ow-t1O">
-                                <rect key="frame" x="143" y="164" width="315" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="315" id="Ggn-pL-Xjd"/>
-                                </constraints>
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Uh9-pv-0rL" customClass="ProgressView" customModule="ImageLoader" customModuleProvider="target">
+                                <rect key="frame" x="208" y="120" width="184" height="154"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="82N-eh-ezW">
+                                <rect key="frame" x="260" y="286" width="81" height="28"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="249" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter File Url" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2fF-ow-t1O">
+                                <rect key="frame" x="168" y="349" width="265" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="URL" enablesReturnKeyAutomatically="YES"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YxM-5c-4Gk">
-                                <rect key="frame" x="219" y="285" width="163" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YxM-5c-4Gk" customClass="DownloadButton" customModule="ImageLoader" customModuleProvider="target">
+                                <rect key="frame" x="219" y="408" width="163" height="30"/>
                                 <color key="backgroundColor" red="0.92011312859659489" green="0.99759302389396087" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="163" id="hNu-Fs-jEd"/>
-                                </constraints>
-                                <state key="normal" title="Download Image"/>
+                                <state key="normal" title="Download File"/>
                                 <connections>
-                                    <action selector="downloadImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mqq-Nf-SIl"/>
+                                    <action selector="downloadButtonPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="JqW-4W-fQE"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="YxM-5c-4Gk" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="0dg-LQ-0B0"/>
-                            <constraint firstItem="YxM-5c-4Gk" firstAttribute="centerX" secondItem="2fF-ow-t1O" secondAttribute="centerX" id="2wQ-Na-erp"/>
-                            <constraint firstItem="2fF-ow-t1O" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="100" id="NcM-pL-77C"/>
-                            <constraint firstItem="2fF-ow-t1O" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="dwC-RC-BZf"/>
+                            <constraint firstItem="82N-eh-ezW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="16F-hL-Un1"/>
+                            <constraint firstItem="2fF-ow-t1O" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="64" id="9yC-6Q-G2p"/>
+                            <constraint firstItem="Uh9-pv-0rL" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-103" id="BKU-Jn-1DR"/>
+                            <constraint firstItem="2fF-ow-t1O" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="HN8-i7-oIK"/>
+                            <constraint firstItem="82N-eh-ezW" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="XhP-DK-p9j"/>
+                            <constraint firstItem="YxM-5c-4Gk" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="123" id="aID-pA-dSq"/>
+                            <constraint firstItem="Uh9-pv-0rL" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="tET-oo-z79"/>
+                            <constraint firstItem="YxM-5c-4Gk" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="xs1-RF-wAf"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="oPC-aa-Rdq"/>
+                    <navigationItem key="navigationItem" title="File Downloader" id="vNK-e3-D2N"/>
                     <connections>
-                        <outlet property="downloadImageButton" destination="YxM-5c-4Gk" id="uXj-h5-Bzc"/>
-                        <outlet property="urlTextField" destination="2fF-ow-t1O" id="6eY-7f-8Pt"/>
+                        <outlet property="downloadButton" destination="YxM-5c-4Gk" id="ciR-YH-zt5"/>
+                        <outlet property="progressView" destination="Uh9-pv-0rL" id="8wX-oh-dbr"/>
+                        <outlet property="statusLabel" destination="82N-eh-ezW" id="Ltv-AM-FRY"/>
+                        <outlet property="textField" destination="2fF-ow-t1O" id="TMB-EC-CxQ"/>
                         <segue destination="HwE-fF-oCo" kind="show" id="OQL-ki-Izu"/>
                     </connections>
                 </viewController>
@@ -70,7 +80,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tq1-y1-21y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1725" y="178"/>
+            <point key="canvasLocation" x="2549" y="834"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="1xH-cQ-Obt">

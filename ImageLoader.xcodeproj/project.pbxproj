@@ -10,6 +10,8 @@
 		E86D79D7FDBB598EF759C7DE /* Pods_ImageLoader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3186A34C6413C072E709881C /* Pods_ImageLoader.framework */; };
 		F909183C1D5BB32400289B1A /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F909183B1D5BB32400289B1A /* NetworkService.swift */; };
 		F90918401D5BCA1B00289B1A /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F909183F1D5BCA1B00289B1A /* ImageViewController.swift */; };
+		F91922B41D5F42C50009833F /* DownloadButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91922B31D5F42C50009833F /* DownloadButton.swift */; };
+		F91922B61D5F44270009833F /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91922B51D5F44270009833F /* ProgressView.swift */; };
 		F9F0B9021D5BA0F500490E42 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F0B9011D5BA0F500490E42 /* AppDelegate.swift */; };
 		F9F0B9041D5BA0F500490E42 /* GetUrlViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F0B9031D5BA0F500490E42 /* GetUrlViewController.swift */; };
 		F9F0B9071D5BA0F500490E42 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9F0B9051D5BA0F500490E42 /* Main.storyboard */; };
@@ -42,6 +44,8 @@
 		69D600522E027228916A88ED /* Pods-ImageLoader.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImageLoader.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ImageLoader/Pods-ImageLoader.debug.xcconfig"; sourceTree = "<group>"; };
 		F909183B1D5BB32400289B1A /* NetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		F909183F1D5BCA1B00289B1A /* ImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = SOURCE_ROOT; };
+		F91922B31D5F42C50009833F /* DownloadButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownloadButton.swift; sourceTree = "<group>"; };
+		F91922B51D5F44270009833F /* ProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
 		F9F0B8FE1D5BA0F500490E42 /* ImageLoader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageLoader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9F0B9011D5BA0F500490E42 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F9F0B9031D5BA0F500490E42 /* GetUrlViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUrlViewController.swift; sourceTree = "<group>"; };
@@ -100,6 +104,34 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		F905AE9B1D5D89580039F08B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F9F0B9051D5BA0F500490E42 /* Main.storyboard */,
+				F9F0B90A1D5BA0F500490E42 /* LaunchScreen.storyboard */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		F905AE9C1D5D89790039F08B /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				F9F0B9031D5BA0F500490E42 /* GetUrlViewController.swift */,
+				F909183F1D5BCA1B00289B1A /* ImageViewController.swift */,
+				F91922B31D5F42C50009833F /* DownloadButton.swift */,
+				F91922B51D5F44270009833F /* ProgressView.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		F905AE9D1D5D89A80039F08B /* services */ = {
+			isa = PBXGroup;
+			children = (
+				F909183B1D5BB32400289B1A /* NetworkService.swift */,
+			);
+			name = services;
+			sourceTree = "<group>";
+		};
 		F9F0B8F51D5BA0F500490E42 = {
 			isa = PBXGroup;
 			children = (
@@ -125,14 +157,12 @@
 		F9F0B9001D5BA0F500490E42 /* ImageLoader */ = {
 			isa = PBXGroup;
 			children = (
+				F905AE9D1D5D89A80039F08B /* services */,
+				F905AE9C1D5D89790039F08B /* ViewControllers */,
+				F905AE9B1D5D89580039F08B /* Views */,
 				F9F0B9011D5BA0F500490E42 /* AppDelegate.swift */,
-				F9F0B9031D5BA0F500490E42 /* GetUrlViewController.swift */,
-				F9F0B9051D5BA0F500490E42 /* Main.storyboard */,
 				F9F0B9081D5BA0F500490E42 /* Assets.xcassets */,
-				F9F0B90A1D5BA0F500490E42 /* LaunchScreen.storyboard */,
 				F9F0B90D1D5BA0F500490E42 /* Info.plist */,
-				F909183B1D5BB32400289B1A /* NetworkService.swift */,
-				F909183F1D5BCA1B00289B1A /* ImageViewController.swift */,
 			);
 			path = ImageLoader;
 			sourceTree = "<group>";
@@ -341,6 +371,8 @@
 				F909183C1D5BB32400289B1A /* NetworkService.swift in Sources */,
 				F90918401D5BCA1B00289B1A /* ImageViewController.swift in Sources */,
 				F9F0B9021D5BA0F500490E42 /* AppDelegate.swift in Sources */,
+				F91922B41D5F42C50009833F /* DownloadButton.swift in Sources */,
+				F91922B61D5F44270009833F /* ProgressView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

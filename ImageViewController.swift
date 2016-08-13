@@ -15,21 +15,17 @@ class ImageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-//        print("Got this URL" + imageUrl!)
         if imageUrl != nil {
-            let networkService = NetworkService(url: NSURL(string: self.imageUrl!)!)
-            networkService.fetchImage({(data) in
-                let image = UIImage(data: data)
-                dispatch_async(dispatch_get_main_queue(), {
-                    self.imageView.image = image
-                })
+            let image = UIImage(contentsOfFile: imageUrl!)
+            dispatch_async(dispatch_get_main_queue(), {
+                self.imageView.image = image
             })
+            
         }
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
 
